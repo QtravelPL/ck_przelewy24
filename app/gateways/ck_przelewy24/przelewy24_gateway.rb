@@ -12,20 +12,20 @@ module CkPrzelewy24
     include HTTParty
     logger Rails.logger
 
-    base_uri przelewy24_url
+    base_uri CkPrzelewy24.przelewy24_url
 
     def register_transaction p24_transaction
       @p24_transaction = p24_transaction
       response = self.class.post("/trnRegister", body: register_body)
 
-      raise(UnsuccessfulResponse.new(register_body, response)) unless response.success?
+      response.success? ? response : raise(UnsuccessfulResponse.new(register_body, response))
     end
 
     def verify_transaction p24_confirmed_transaction
       @p24_confirmed_transaction = p24_confirmed_transaction
       response = self.class.post("/trnVerify", body: verify_body)
 
-      raise(UnsuccessfulResponse.new(verify_body, response)) unless response.success?
+      response.success? ? response : raise(UnsuccessfulResponse.new(verify_body, response))
     end
 
     private
@@ -39,10 +39,6 @@ module CkPrzelewy24
     def verify_body
       p24_confirmed_transaction.attributes.except("id", "p24_method", "p24_statement", "created_at",
                                                   "updated_at", "response", "verified")
-    end
-
-    def przelewy24_url
-      ENV["PRZELEWY24_URL"]
     end
   end
 end
