@@ -1,14 +1,12 @@
 class OrdersController < ApplicationController
 
-  include CkPrzelewy24::ApplicationHelper
-
   def index
     @order = Order.new
   end
 
   def create
     if Order.new(create_order_params).valid?
-      redirect_to p24_request_path(transaction_params)
+      redirect_to CkPrzelewy24.p24_request_path(transaction_params)
     else
       render :show
     end
