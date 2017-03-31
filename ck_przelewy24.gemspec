@@ -17,10 +17,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.2.5"
+  s.add_dependency "httparty"
+  s.add_dependency "responders"
+  s.add_dependency "apipie-rails"
 
   s.add_development_dependency "pg"
-
-  s.add_runtime_dependency "httparty"
 
   s.add_development_dependency "rspec-rails", "~> 3.5.2"
   s.add_development_dependency "webmock", ">= 2.0"
