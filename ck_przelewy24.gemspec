@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "apipie-rails"
 
   s.add_development_dependency "pg"
+  s.add_development_dependency "puma"
 
   s.add_development_dependency "rspec-rails", "~> 3.5.2"
   s.add_development_dependency "webmock", ">= 2.0"

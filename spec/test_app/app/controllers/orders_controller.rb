@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
         order_price: order.price,
         transaction_description: 'test_description',
         order_email: order.email,
-        url_return: "#{ CkPrzelewy24.site_url }/order_confirmation/#{ order.id }",
+        url_return: "#{ CkPrzelewy24.site_url }/order_confirmations/#{ order.id }",
         client_name: order.first_name,
         client_phone: order.phone,
         order: order

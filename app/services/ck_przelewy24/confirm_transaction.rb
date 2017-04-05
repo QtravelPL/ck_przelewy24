@@ -3,14 +3,14 @@ module CkPrzelewy24
 
     def call
       if confirmation_sign? && p24_confirmed_transaction
-        confirm.tap { verify_transaction && run_mailer_service }
+        confirm.tap { verify_transaction && run_callback_service }
       end
     end
 
     private
 
-    def run_mailer_service
-      mailer_service.new(p24_transaction.order_id).call
+    def run_callback_service
+      callback_service.new(p24_transaction.order_id).call
     end
 
     def verify_transaction
@@ -56,8 +56,8 @@ module CkPrzelewy24
       attributes[:p24_order_id]
     end
 
-    def mailer_service
-      CkPrzelewy24.mailer_service_name.constantize if CkPrzelewy24.mailer_service_name.present?
+    def callback_service
+      CkPrzelewy24.service_name_call_after_confirmation.constantize if CkPrzelewy24.service_name_call_after_confirmation.present?
     end
   end
 end
