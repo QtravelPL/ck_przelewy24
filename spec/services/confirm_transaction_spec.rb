@@ -27,7 +27,7 @@ describe CkPrzelewy24::ConfirmTransaction do
   let(:p24_transaction) { double "CKPrzelewy24::P24Transaction" }
   let(:przelewy24_verify_transaction) { double "CKPrzelewy24::VerifyTransaction"}
 
-  let(:send_shopping_confirmation_emails) { double CkPrzelewy24.mailer_service_name }
+  let(:callback_service_after_confirmation) { double CkPrzelewy24.service_name_call_after_confirmation }
 
   describe "#call" do
 
@@ -38,8 +38,8 @@ describe CkPrzelewy24::ConfirmTransaction do
       expect(p24_transaction).to receive(:confirm).and_return(true)
       expect(p24_transaction).to receive(:order_id).and_return(p24_transaction)
 
-      expect(CkPrzelewy24.mailer_service_name.constantize).to receive(:new).with(p24_transaction).and_return(send_shopping_confirmation_emails)
-      expect(send_shopping_confirmation_emails).to receive(:call).and_return(true)
+      expect(CkPrzelewy24.service_name_call_after_confirmation.constantize).to receive(:new).with(p24_transaction).and_return(callback_service_after_confirmation)
+      expect(callback_service_after_confirmation).to receive(:call).and_return(true)
 
       expect(CkPrzelewy24::VerifyTransaction).to receive(:new).with(p24_confirmed_transaction).and_return(przelewy24_verify_transaction)
       expect(przelewy24_verify_transaction).to receive(:call).and_return(przelewy24_verify_transaction)
