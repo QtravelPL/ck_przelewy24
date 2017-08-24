@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
 
   has_one :p24_transaction, class_name: 'CkPrzelewy24::P24Transaction'
 
