@@ -1,4 +1,4 @@
-class CreateP24Transactions < ActiveRecord::Migration
+class CreateP24Transactions < ActiveRecord::Migration[4.2]
   def change
     create_table :p24_transactions do |t|
       t.integer :order_id, null: false

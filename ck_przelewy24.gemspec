@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 5.1.3"
+  s.add_dependency "rails", [">= 5.1", "< 6"]
   s.add_dependency "httparty"
   s.add_dependency "responders"
   s.add_dependency "apipie-rails"
