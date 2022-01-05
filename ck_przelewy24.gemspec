@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", [">= 5.1", "< 6"]
   s.add_dependency "httparty"
   s.add_dependency "responders"
-  s.add_dependency "apipie-rails"
 
   s.add_development_dependency "pg"
   s.add_development_dependency "puma"

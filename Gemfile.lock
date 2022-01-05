@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     ck_przelewy24 (1.0.0)
-      apipie-rails
       httparty
       rails (>= 5.1, < 6)
       responders
@@ -53,8 +52,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    apipie-rails (0.5.2)
-      rails (>= 4.1)
     arel (9.0.0)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
