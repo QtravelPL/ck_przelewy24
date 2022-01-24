@@ -10,7 +10,7 @@ module CkPrzelewy24
     private
 
     def run_callback_service
-      callback_service.new(p24_transaction.order_id).call
+      callback_service.new(p24_transaction.order_id).call if CkPrzelewy24.service_name_call_after_confirmation.present?
     end
 
     def verify_transaction
@@ -57,7 +57,7 @@ module CkPrzelewy24
     end
 
     def callback_service
-      CkPrzelewy24.service_name_call_after_confirmation.constantize if CkPrzelewy24.service_name_call_after_confirmation.present?
+      CkPrzelewy24.service_name_call_after_confirmation.constantize
     end
   end
 end

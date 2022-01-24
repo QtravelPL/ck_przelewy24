@@ -4,7 +4,6 @@ module CkPrzelewy24
     self.table_name = "p24_confirmed_transactions"
 
     belongs_to :p24_transaction, foreign_key: :p24_session_id, primary_key: :p24_session_id
-    has_many :p24_dispatched_transactions, foreign_key: :p24_order_id, primary_key: :p24_order_id
 
     delegate :order, to: :p24_transaction
 
