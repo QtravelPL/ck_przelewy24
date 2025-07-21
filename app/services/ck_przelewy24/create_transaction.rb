@@ -139,6 +139,7 @@ module CkPrzelewy24
     end
 
     def channel
+      attributes[:p24_channel]
     end
 
     def shipping

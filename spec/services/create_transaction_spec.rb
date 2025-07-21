@@ -17,6 +17,7 @@ describe CkPrzelewy24::CreateTransaction do
         p24_phone: "123123123",
         p24_url_return: 'example.com',
         p24_url_status: "example.com/api/p24_transactions/confirm",
+        p24_channel: '1',
         order: order
     }
   end
@@ -42,7 +43,7 @@ describe CkPrzelewy24::CreateTransaction do
         p24_url_status: attributes[:p24_url_status],
         p24_time_limit: CkPrzelewy24::CreateTransaction::DEFAULT_TIME_LIMIT,
         p24_wait_for_result: nil,
-        p24_channel: nil,
+        p24_channel: attributes[:p24_channel],
         p24_shipping: nil,
         p24_transfer_label: nil,
         p24_api_version: CkPrzelewy24::CreateTransaction::API_VERSION,
