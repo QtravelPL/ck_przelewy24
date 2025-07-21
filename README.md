@@ -52,5 +52,6 @@ with params:
     client_name: Client name,
     client_phone: Phone,
     order: Your saved to DB Order Object
+    channel: paymentMethod number  (not required )
 }
 ```

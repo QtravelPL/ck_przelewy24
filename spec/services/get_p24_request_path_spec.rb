@@ -13,6 +13,7 @@ describe CkPrzelewy24::GetP24RequestPath do
       url_return: "#{ CkPrzelewy24.site_url }/order_confirmation/#{ order.id }",
       client_name: order.first_name,
       client_phone: order.phone,
+      channel: order.channel,
       order: order
     }
   end

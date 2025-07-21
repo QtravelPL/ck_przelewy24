@@ -28,7 +28,7 @@ module CkPrzelewy24
     end
 
     def create_transaction_params
-      {
+      params = {
           p24_amount: transaction_params[:order_price],
           p24_description: transaction_params[:transaction_description],
           p24_email: transaction_params[:order_email],
@@ -38,6 +38,8 @@ module CkPrzelewy24
           p24_phone: transaction_params[:client_phone],
           order: transaction_params[:order]
       }
+      params[:p24_channel] = transaction_params[:channel] if transaction_params[:channel].present?
+      params 
     end
   end
 end
