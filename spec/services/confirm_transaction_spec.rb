@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 describe CkPrzelewy24::ConfirmTransaction do
 

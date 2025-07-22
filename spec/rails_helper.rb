@@ -4,7 +4,7 @@ require File.expand_path('../test_app/config/environment.rb', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
-require 'factory_girl'
+require 'factory_bot'
 require 'rspec/rails'
 require 'webmock/rspec'
 require 'shoulda/matchers'

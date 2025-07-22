@@ -1,9 +1,9 @@
 require 'rails_helper'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 describe CkPrzelewy24::RegisterTransaction do
 
-  let(:p24_transaction) { FactoryGirl.create :p24_transaction }
+  let(:p24_transaction) { FactoryBot.create :p24_transaction }
   let(:przelewy24_gateway) { double "CkPrzelewy24::Przelewy24Gateway"}
   let(:response) { "response" }
 

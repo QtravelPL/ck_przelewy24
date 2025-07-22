@@ -1,9 +1,9 @@
 require 'rails_helper'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 describe CkPrzelewy24::P24Transaction do
 
-  subject { FactoryGirl.create :p24_transaction }
+  subject { FactoryBot.create :p24_transaction }
 
   it { is_expected.to have_many(:p24_confirmed_transactions) }
 

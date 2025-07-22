@@ -1,9 +1,9 @@
 require 'rails_helper'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 describe CkPrzelewy24::GetP24RequestPath do
 
-  let(:order) { FactoryGirl.create :order }
+  let(:order) { FactoryBot.create :order }
 
   let(:transaction_params) do
     {
