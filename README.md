@@ -1,5 +1,5 @@
 # CkPrzelewy24
- 
+
 Rails engine to handle basic Przelewy24 payment gateway
 
 

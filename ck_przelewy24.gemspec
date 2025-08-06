@@ -16,9 +16,10 @@ Gem::Specification.new do |s|
 
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", [">= 5.1", "< 6"]
+  s.add_dependency "rails", [">= 6.0", "< 6.1"]
   s.add_dependency "httparty"
   s.add_dependency "responders"
+  s.add_dependency "concurrent-ruby"
 
   s.add_development_dependency "pg"
   s.add_development_dependency "puma"
