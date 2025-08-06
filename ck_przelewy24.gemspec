@@ -16,16 +16,18 @@ Gem::Specification.new do |s|
 
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", [">= 6.0", "< 6.1"]
-  s.add_dependency "httparty"
-  s.add_dependency "responders"
-  s.add_dependency "concurrent-ruby"
+  s.required_ruby_version = ">= 3.1.7"
 
-  s.add_development_dependency "pg"
-  s.add_development_dependency "puma"
+  s.add_dependency "rails", [">= 6.1", "< 7.0"]
+  s.add_dependency "httparty", "~> 0.23"
+  s.add_dependency "responders", "~> 3.1"
+  s.add_dependency "concurrent-ruby", "1.3.4"
 
-  s.add_development_dependency "rspec-rails", "~> 3.6"
-  s.add_development_dependency "webmock", ">= 2.0"
-  s.add_development_dependency 'factory_bot_rails'
-  s.add_development_dependency "shoulda-matchers"
+  s.add_development_dependency "pg", "~> 1.5"
+  s.add_development_dependency "puma", "~> 6.0"
+
+  s.add_development_dependency "rspec-rails", "~> 6.0"
+  s.add_development_dependency "webmock", "~> 3.18"
+  s.add_development_dependency 'factory_bot_rails', "~> 6.4"
+  s.add_development_dependency "shoulda-matchers", "~> 6.5"
 end
